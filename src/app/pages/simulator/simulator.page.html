@@ -1,0 +1,62 @@
+<ion-content padding>
+    <div class="modal-body p-0" ngbAutofocus>
+      <iframe class="iframestyle" #IFRAME [src]="url"></iframe>
+    </div>
+  <!--ion-item lines="none" class="header">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="'assets/img/simulator.svg'" alt="simulator">
+      </ion-img>
+    </ion-thumbnail>
+    <ion-text color="tertiary" text-center>
+      <h3>Loan simulation</h3>
+    </ion-text>
+  </ion-item>
+  <form #simulatorForm="ngForm" class="ion-margin-top">
+    <ion-label color="primary">Loan amount</ion-label>
+    <ion-item class="input-container">
+      <ion-input type="number"
+        name="amount"
+        [(ngModel)]="params.amount">
+      </ion-input>
+    </ion-item>
+    <ion-range min="1000" max="10000" color="secondary"
+      name="amountRange"
+      [(ngModel)]="params.amount">
+      
+    </ion-range>
+    <ion-label color="primary">Loan term in months</ion-label>
+    <ion-item class="input-container">
+      <ion-input type="number" name="loanTerm"
+        [(ngModel)]="params.loanTerm">
+      </ion-input>
+    </ion-item>
+    <ion-range min="12" max="36" color="secondary"
+      name="loanTermRange"
+      [(ngModel)]="params.loanTerm">
+      
+    </ion-range>
+    <ion-text color="primary">
+      <h5>Summary of your simulation</h5>
+    </ion-text>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-text color="dark" text-center>
+            <div>Interest rate per year 2%</div>
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text color="dark" class="result" text-center>
+            <div class="">Monthly payments</div>
+            <div class="">€ {{result}}</div>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="validate()" mode="ios">Validate</ion-button>
+      </ion-col>
+    </ion-row>
+  </form-->
+</ion-content>

@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Attila API</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Attila API</h1>
+    <div class="app-desc">ATTILA API documentation</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="ahmed@attila.ai">ahmed@attila.ai</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/Attila5/ATTILAAPI/1.0.0</div>
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>APIKey KeyParamName:api_key KeyInQuery:false KeyInHeader:true</li>
+      <li>OAuth AuthorizationUrl:http://attilaapi.ai/oauthTokenUrl:</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Attila">Attila</a></h4>
+  <ul>
+  <li><a href="#startjourney"><code><span class="http-method">get</span> /StartAction/{customerId}</code></a></li>
+  <li><a href="#updatePetWithForm"><code><span class="http-method">post</span> /NextAction/{customerId}</code></a></li>
+  <li><a href="#updateVariable"><code><span class="http-method">post</span> /updatevariable/{customerId}</code></a></li>
+  </ul>
+
+  <h1><a name="Attila">Attila</a></h1>
+  <div class="method"><a name="startjourney"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /StartAction/{customerId}</code></pre></div>
+    <div class="method-summary">Get First Action (<span class="nickname">startjourney</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">customerId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; customer Id </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ApiResponse">ApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "code" : 0,
+  "response" : [ {
+    "buttons" : [ {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    }, {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    } ],
+    "graph-data" : {
+      "data" : "{}",
+      "type" : "line_chart"
+    },
+    "text" : "text",
+    "type" : "graph"
+  }, {
+    "buttons" : [ {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    }, {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    } ],
+    "graph-data" : {
+      "data" : "{}",
+      "type" : "line_chart"
+    },
+    "text" : "text",
+    "type" : "graph"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ApiResponse">ApiResponse</a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updatePetWithForm"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /NextAction/{customerId}</code></pre></div>
+    <div class="method-summary">Get Next Action (<span class="nickname">updatePetWithForm</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">customerId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; customer Id </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#action_payload">action_payload</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; order placed for purchasing the pet </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ApiResponse">ApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "code" : 0,
+  "response" : [ {
+    "buttons" : [ {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    }, {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    } ],
+    "graph-data" : {
+      "data" : "{}",
+      "type" : "line_chart"
+    },
+    "text" : "text",
+    "type" : "graph"
+  }, {
+    "buttons" : [ {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    }, {
+      "parent_id" : 6,
+      "type" : "url_button",
+      "url" : "url",
+      "node_id" : 1
+    } ],
+    "graph-data" : {
+      "data" : "{}",
+      "type" : "line_chart"
+    },
+    "text" : "text",
+    "type" : "graph"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#ApiResponse">ApiResponse</a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateVariable"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /updatevariable/{customerId}</code></pre></div>
+    <div class="method-summary">update customer variable (<span class="nickname">updateVariable</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">customerId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; customer Id </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#customer_data">customer_data</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; order placed for purchasing the pet </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ApiResponse"><code>ApiResponse</code> - </a></li>
+    <li><a href="#ApiResponse_buttons"><code>ApiResponse_buttons</code> - </a></li>
+    <li><a href="#ApiResponse_graphdata"><code>ApiResponse_graphdata</code> - </a></li>
+    <li><a href="#ApiResponse_response"><code>ApiResponse_response</code> - </a></li>
+    <li><a href="#action_payload"><code>action_payload</code> - </a></li>
+    <li><a href="#customer_data"><code>customer_data</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ApiResponse"><code>ApiResponse</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">response (optional)</div><div class="param-desc"><span class="param-type"><a href="#ApiResponse_response">array[ApiResponse_response]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ApiResponse_buttons"><code>ApiResponse_buttons</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> the button type </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">url_button</div><div class="param-enum">redirection_button</div><div class="param-enum">redirection_reply</div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> the url of redirection In case type of button is url_button else '' </div>
+<div class="param">parent_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> the parent_id of the button (to be sent when the button is clicked) </div>
+<div class="param">node_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> the node_id of the button (to be sent when the button is clicked) </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ApiResponse_graphdata"><code>ApiResponse_graphdata</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">line_chart</div><div class="param-enum">bar_chart</div><div class="param-enum">pie_chart</div>
+<div class="param">data (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ApiResponse_response"><code>ApiResponse_response</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> type of content </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">graph</div><div class="param-enum">text_with_buttons</div>
+<div class="param">graph-data (optional)</div><div class="param-desc"><span class="param-type"><a href="#ApiResponse_graphdata">ApiResponse_graphdata</a></span>  </div>
+<div class="param">text (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> the text of element in case of text_with_buttons (can be empty string in case of graph content ) </div>
+<div class="param">buttons (optional)</div><div class="param-desc"><span class="param-type"><a href="#ApiResponse_buttons">array[ApiResponse_buttons]</a></span> Array of buttons (can be empty in case of graph content ) </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="action_payload"><code>action_payload</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">parent_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">node_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="customer_data"><code>customer_data</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>object containing customer variables to update  example {'var1':'value1','var2':'value2'}</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>

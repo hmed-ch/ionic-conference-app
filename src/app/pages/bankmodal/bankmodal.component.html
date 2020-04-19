@@ -1,0 +1,62 @@
+<ion-header style='display: block;
+    position: relative;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 100%;
+    z-index: 10;'>
+  <ion-toolbar>
+    <ion-buttons  slot="start" (click)='closeModal()'>
+      <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+</ion-button>
+    </ion-buttons>
+    <!--ion-thumbnail slot="start">
+          <ion-img [src]="'assets/img/bank.svg'" style="margin-left:2%;" alt="museum">
+          </ion-img>
+        </ion-thumbnail-->
+
+    <ion-title >Ajouter un compte</ion-title>
+
+    <!--ion-buttons slot="end">
+      <ion-button (click)="presentFilter()">
+        <span *ngIf="ios">Filter</span>
+        <span *ngIf="!ios">
+          <ion-icon slot="icon-only" name="options"></ion-icon>
+        </span>
+      </ion-button>
+    </ion-buttons-->
+  </ion-toolbar>
+
+  <!--ion-toolbar>
+    <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+  </ion-toolbar-->
+</ion-header>
+         
+          <ion-content fullscreen>
+          <!--ion-item lines="none" class="header">
+                <ion-back-button [defaultHref]="defaultHref" (click)="closeModal()"></ion-back-button>
+
+		    <ion-thumbnail slot="start">
+		      <ion-img [src]="'assets/img/bank.png'" alt="museum">
+		      </ion-img>
+		    </ion-thumbnail>
+		    <ion-text >
+		      <h3>Ajouter un compte</h3>
+		    </ion-text>
+		  </ion-item-->
+
+          <ion-grid >
+          <ion-row *ngFor="let allbanks of popularbanks">
+       <ion-col *ngFor="let bank of allbanks">
+          <ion-card *ngIf="bank.bank_id" (click)="closeModal()" routerLink="/login/{{bank.bank_id}}"  >
+            <img src="assets/img/{{bank.bank_logo}}"  />
+        </ion-card>
+       </ion-col>
+     </ion-row >
+
+        
+
+        
+      </ion-grid>
+            
+          </ion-content>

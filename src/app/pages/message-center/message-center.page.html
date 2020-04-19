@@ -1,0 +1,169 @@
+<!--ion-content padding-horizontal padding-top -->
+<ion-header style='display: block;
+    position: relative;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 100%;
+    z-index: 10;'>
+  <ion-toolbar>
+    <ion-buttons  slot="start" (click)='myBackButton()'>
+      <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+</ion-button>
+    </ion-buttons>
+
+    <ion-title>Insights</ion-title>
+
+    <!--ion-buttons slot="end">
+      <ion-button (click)="presentFilter()">
+        <span *ngIf="ios">Filter</span>
+        <span *ngIf="!ios">
+          <ion-icon slot="icon-only" name="options"></ion-icon>
+        </span>
+      </ion-button>
+    </ion-buttons-->
+  </ion-toolbar>
+
+  <!--ion-toolbar>
+    <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+  </ion-toolbar-->
+</ion-header>
+<ion-content #content>
+<div padding-horizontal padding-top >
+  
+  <div #msgs class="messages-list msgs" #scrollMe>
+      
+    <div *ngFor="let msg of messages; let index=index;">
+      
+
+      <div *ngIf="msg.sender === 'script'" class="message-script" [class.buttons-msg]="msg.type=='buttons'">
+        {{msg.text}}
+      </div>
+      <div *ngIf="msg.data" style="margin-bottom:20px;">
+        
+        <span *ngIf="msg.data.type=='circle'" >
+          <div style="border: solid 5px deepskyblue;
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    background-color: aliceblue;
+    text-align: center;
+    margin: auto;"> <p style="color: grey;
+    margin-top: 40%;
+    font-weight: bold;
+    font-size: 1.1em;">320 dinars</p></div>
+        </span>
+        <span *ngIf="msg.data.type=='objective'" >
+          <div class="quantity buttons_added">
+
+            <p class='quantity-text'>Logement</p>
+  <input  [disabled]="msg.selected" type="button" value="-" class="minus" (click)='minus(index,0)'><input [disabled]="msg.selected" type="number" step="1" min="0" [(ngModel)]="msg.data.data[0].data[0]" max="" name="quantity" value="340" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input [disabled]="msg.selected" type="button" value="+" class="plus" (click)='plus(index,0)'>
+</div>
+<div class="quantity buttons_added">
+
+            <p class='quantity-text'>Courses</p>
+  <input [disabled]="msg.selected" type="button" value="-" class="minus" (click)='minus(index,1)'><input [disabled]="msg.selected"  type="number" step="1" min="0" [(ngModel)]="msg.data.data[1].data[0]" max="" name="quantity" value="230" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input [disabled]="msg.selected" type="button" value="+" class="plus" (click)='plus(index,1)'>
+</div>
+<div class="quantity buttons_added">
+
+            <p class='quantity-text'>Restaurants</p>
+  <input [disabled]="msg.selected" type="button" value="-" class="minus" (click)='minus(index,2)'><input [disabled]="msg.selected"  type="number" step="1" min="0" max="" name="quantity" [(ngModel)]="msg.data.data[2].data[0]" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input [disabled]="msg.selected" type="button" value="+" class="plus" (click)='plus(index,2)'>
+</div>
+<div class="quantity buttons_added">
+
+            <p class='quantity-text'>Loisirs</p>
+  <input [disabled]="msg.selected" type="button" value="-" class="minus" (click)='minus(index,3)'><input  [disabled]="msg.selected" type="number" step="1" min="0" [(ngModel)]="msg.data.data[3].data[0]" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input [disabled]="msg.selected" type="button" value="+" class="plus" (click)='plus(index,3)'>
+</div>
+              </span>
+        <span *ngIf="msg.data.type!='circle'&&msg.data.type!='objective'" >
+      <chars 
+    [datainsight]="msg.data">
+  </chars>
+  </span>
+</div>
+<div *ngIf="msg.type=='userinput' && !msg.selected">
+<ion-item  style="box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+    font-size: 12px;
+    min-height: 60px;
+    overflow: auto;
+    position: relative;
+    max-height: 50%;">
+  <ion-textarea  [(ngModel)]="msg.userinput" name="usertext" placeholder="Enter message"> </ion-textarea>
+  <ion-button (click)="senduserinput(msg.id,msg.userinput)"><ion-icon name="arrow-dropright"></ion-icon></ion-button>
+</ion-item>
+</div>
+
+      <div *ngIf="msg.options!==undefined">
+        <div *ngIf="msg.type=='buttons'" class="options buttons-option">
+          <ion-list>
+            <ion-item *ngFor="let but of msg.options">
+            
+            <button *ngIf="but.type=='redirection'" ion-button routerLink="{{but.url}}" routerDirection="forward">
+                      {{but.text}}
+              </button >
+              <button *ngIf="but.type!='redirection'"  ion-button (click)="onButtonClick(msg.id,but.id,but.type,but.text)">
+                      {{but.text}}
+              </button >
+            </ion-item>
+  </ion-list>
+
+        <!--div class="message-options" *ngFor="let opt of msg.options"
+          (click)="onOptionClick(opt.id)"
+          [ngClass]="{'active': opt.active}">
+          <div class="icons">
+            <div class="icon"></div>
+            <div *ngIf="opt.id === 1 || opt.id === 2" class="icon"></div>
+            <div *ngIf="opt.id === 2" class="icon"></div>
+          </div>
+          <div class="text">
+            {{opt.text}}
+          </div>
+        </div-->
+        </div>
+        <div *ngIf="msg.type=='replies' && !msg.selected" class="quick-options">
+          <ion-chip outline color="tertiary" *ngFor="let but of msg.options">
+              <ion-label color="tertiary" (click)="onReplyClick(msg.id,but.id,but.text)" >{{but.text}}</ion-label>
+          </ion-chip>
+
+        <!--div class="message-options" *ngFor="let opt of msg.options"
+          (click)="onOptionClick(opt.id)"
+          [ngClass]="{'active': opt.active}">
+          <div class="icons">
+            <div class="icon"></div>
+            <div *ngIf="opt.id === 1 || opt.id === 2" class="icon"></div>
+            <div *ngIf="opt.id === 2" class="icon"></div>
+          </div>
+          <div class="text">
+            {{opt.text}}
+          </div>
+        </div-->
+        </div>
+      </div>
+
+      <div *ngIf="msg.sender === 'user'" class="message-container">
+        <div class="message-user">
+          {{msg.text}}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--div class="container" *ngIf="showFooter">
+    <div class="input-container">
+      <ion-input placeholder="Your message goes here" name="msg" [(ngModel)]="msg" (keyup.enter)="sendMessage(msg)"></ion-input>
+    </div>
+    <ion-fab>
+      <ion-fab-button (click)="sendMessage(msg)">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div-->
+  <!-- <iframe width="100%" height="100%" frameBorder="0" [src]="iframeSrc"></iframe> -->
+
+</div>
+
+</ion-content>

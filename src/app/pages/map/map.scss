@@ -1,0 +1,71 @@
+.backBtn{
+   position: absolute;
+   left: 1vw;
+   top: 33vh;
+   width: 15vw;
+   height: 15vw;
+   border-radius: 50%;
+   border: none;
+   background: white;
+}
+
+.nextBtn{
+   position: absolute;
+   right: 20vw;
+   top: 40vh;
+   width: 15vw;
+   height: 15vw;
+   border-radius: 50%;
+   border: none;
+   background: white;
+}
+.card-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content : space-between;
+
+}
+.slide-content{
+  margin-top: 24%;
+  padding-left:16px;
+  padding-right:16px;
+  max-width: 100%;
+}
+.card-img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-right: 16px;
+}
+ion-label{
+  font-size:14px;
+}
+ion-card-content{
+
+}
+ion-button{
+  font-size: 15px;
+  height: 30px;
+  min-width: 127px;
+}
+.card-content {
+    display: flex;
+    flex-direction: row;
+}
+.card-title{
+    font-size: 14px;
+    font-weight: 700;
+    color: #242424;
+    margin-bottom:5px;
+    line-height: 17px;
+
+}
+.card-text{
+  font-size:13px;
+}
+.card-link {
+
+  text-decoration: underline;
+    margin: auto;
+    color: #0cd1e8;
+}

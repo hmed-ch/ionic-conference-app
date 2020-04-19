@@ -1,0 +1,210 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons  slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Accounts</ion-title>
+
+    <!--ion-buttons slot="end">
+      <ion-button (click)="presentFilter()">
+        <span *ngIf="ios">Filter</span>
+        <span *ngIf="!ios">
+          <ion-icon slot="icon-only" name="options"></ion-icon>
+        </span>
+      </ion-button>
+    </ion-buttons-->
+  
+  </ion-toolbar>
+
+  <!--ion-toolbar>
+    <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+  </ion-toolbar-->
+</ion-header>
+
+<ion-content >
+<span *ngIf="this.data.loading">
+
+<ion-row  style="margin-bottom:62px;margin-top: 20px;text-align:center;">
+<ion-col >
+</ion-col >
+  <ion-col >
+
+<ion-text >
+  <h2 style="color:#3880ff;">Synchronisation </h2>
+  <h5 style="color:#3880ff;" >en cours...</h5>
+  </ion-text>
+  </ion-col >
+  <ion-col >
+</ion-col >
+
+ </ion-row >
+<ion-row  style="margin-bottom:90px;">
+<ion-col >
+</ion-col >
+<ion-col >
+<div class="loader">
+</div>
+</ion-col >
+
+<ion-col >
+</ion-col >
+ </ion-row >
+ <ion-row >
+    <ion-col>
+    </ion-col>
+    <ion-col>
+        <ion-img alt="Secure" style="max-width: 40px;display:block;margin:auto;width: 25%;" src="assets/img/secure.svg"></ion-img>
+
+    </ion-col>
+    <ion-col>
+    </ion-col>
+
+    </ion-row>
+    <ion-row style="text-align:center;">
+
+    
+      <ion-col    >
+      <ion-text >
+    <em style='display: table-cell;color: #738aaa;font-size: .8rem;'> ATTILA est securisé et sûr</em>
+    </ion-text>
+    </ion-col>
+    
+  </ion-row>
+  </span>
+
+
+<span [hidden]="this.data.loading">
+
+
+<div style="max-heigth:100px;" >
+ 
+    <chars  *ngIf='graphdata==0'
+    [(datainsight)]="chartsdata">
+  </chars>
+  <chars  *ngIf='graphdata==1'
+    [(datainsight)]="chartsdata2">
+  </chars>
+  <chars  *ngIf='graphdata==2'
+    [(datainsight)]="chartsdata3">
+  </chars>
+
+
+</div>
+
+   <div>
+
+<ion-slides  #testSlider pager="true" [options]="slideOpts" (ionSlideDidChange)='getgraph(testSlider)' >
+      <ion-slide style="padding: 10px;padding-bottom: 35px;">
+  <ion-label style="text-align:center;"> 
+  <!--img src="assets/img/economy.svg" style="width: 21%;margin-left: 39%;" /-->
+ <h3 style="font-size: 18px;">  Votre solde total est de : </h3>
+  <p> {{totalbalance}} DT</p>
+        </ion-label>
+
+      </ion-slide>
+      <ion-slide style="padding: 10px;padding-bottom: 35px;">
+  <ion-label style="text-align:center;"> 
+  <!--img src="assets/img/economy.svg" style="width: 21%;margin-left: 39%;" /-->
+ <h3 style="font-size: 18px;">  Votre Épargne est de : </h3>
+  <p> 5600 DT</p>
+        </ion-label>
+
+      </ion-slide>
+      <ion-slide style="padding: 10px;padding-bottom: 35px;">
+  <ion-label style="text-align:center;"> 
+  <!--img src="assets/img/economy.svg" style="width: 21%;margin-left: 39%;" /-->
+ <h3 style="font-size: 18px;">  Vos dépenses quotidiennes :  </h3>
+  <p> 620 DT</p>
+        </ion-label>
+
+      </ion-slide>
+
+       
+    </ion-slides>
+        
+
+  <a     style="left: 20px;position: absolute;top: 200px;z-index: 100;" (click)="prev()"><img style="width: 30px;" src='assets/img/previous.svg'>
+</a>
+  <a      style="right: 20px;position: absolute;top: 200px;z-index: 100;"  (click)="nex()"><img style="width: 30px;" src='assets/img/next.svg'>
+</a >
+</div>
+
+  <ion-list #scheduleList [hidden]="shownSessions === 0" style='padding:0'>
+
+  <ion-item-group *ngFor="let key of dictkeys" >
+  <ion-item-divider style="background-color: aliceblue;">
+        <ion-label >
+          <h1  style="color: black;font-size: 18px;"
+    >{{key}}</h1>
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding  >
+        <ion-item *ngFor="let account of data.comptes[key]" routerLink="/app/tabs/schedule/session/{{account.Numerodecompte}}">
+
+          <ion-label style='margin-right: -21%;border-left: 2px solid #3bc7c4;padding-left: 1%;'>
+            <h3>{{account.Numerodecompte}}</h3>
+
+            <p>
+              {{account.Intituleducompte}} 
+            </p>
+
+          </ion-label>
+          <ion-label style="text-align:right;padding-right: 2%;" >
+            <h3>{{account.Montant}} DT</h3>
+
+            
+          </ion-label>
+          <ion-icon name="arrow-dropright"></ion-icon>
+
+        </ion-item>
+        
+      </ion-item-sliding>
+      
+
+    </ion-item-group>
+
+  <ion-item-divider style="background-color: aliceblue;">
+  <ion-grid>
+
+           <ion-row >
+           <ion-col >
+         </ion-col >
+          <ion-col >
+          <ion-button style="flex-direction: row;display: flex;" expand="block" (click)="openModal()">ADD AN ACCOUNT</ion-button>
+         </ion-col >
+         <ion-col >
+         </ion-col >
+        
+         </ion-row >
+       </ion-grid>
+
+
+      </ion-item-divider>
+
+
+  </ion-list>
+
+  
+
+  <!--ion-fab  slot="fixed" vertical="bottom" horizontal="end" #fab>
+    <ion-fab-button routerLink="/support">
+        <ion-icon name="logo-ionitron"></ion-icon>    </ion-fab-button>
+    
+  </ion-fab-->
+</span>
+</ion-content>

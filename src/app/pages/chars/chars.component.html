@@ -1,0 +1,42 @@
+
+
+<div class="chart insight-chart" *ngIf="ChartType!='bar' && ChartType!='line'" >
+     <canvas  baseChart 
+     [data]="ChartData" 
+     [labels]="ChartLabels" 
+     [options]="ChartOptions"
+     [chartType]="ChartType" 
+     [legend]="ChartLegend"
+     (chartHover)="chartHovered($event)" 
+     (chartClick)="chartClicked($event)">
+     </canvas>
+     </div>
+
+
+
+<div class="chart insight-chart"  *ngIf="ChartType=='bar'" >
+     <canvas  baseChart 
+     [datasets]="ChartData" 
+     [labels]="ChartLabels" 
+     [options]="ChartOptions"
+     [chartType]="ChartType" 
+     [legend]="ChartLegend"
+     (chartHover)="chartHovered($event)" 
+     (chartClick)="chartClicked($event)">
+     </canvas>
+     </div>
+
+<div class="chart insight-chart"  *ngIf="ChartType=='line'" >
+
+     <canvas baseChart 
+                [datasets]="ChartData"
+                [labels]="ChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                [plugins]="lineChartPlugins"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    

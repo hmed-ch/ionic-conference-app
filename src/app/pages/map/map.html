@@ -1,0 +1,266 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Insights</ion-title>
+
+    
+  </ion-toolbar>
+
+  <!--ion-toolbar>
+    <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+  </ion-toolbar-->
+</ion-header>
+<ion-content>
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/graph.svg"><div >
+    <div class="card-title">Bravo! vous économisez 300 dinars par mois en moyenne</div>
+    <div class="card-text">Savez-vous combien vous aurez à la retraite?</div>
+  </div>
+  </div>
+  <div  justify-content-end class="card-buttons"><a  class="card-link"  (click)="sendmessage(-1,6)">En savoir plus</a><ion-button color="primary" mode="ios"(click)="sendmessage(-1,6)" > Simuler</ion-button>
+  </div></ion-card-content>
+</ion-card>
+  
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/warning.svg"><div >
+    <div class="card-title">Vous risquez d'avoir un découvert</div>
+    <div class="card-text">Votre solde n'est pas suffisante pour les dépenses de ce mois-ci</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><a  class="card-link" (click)="sendmessage(-1,1)">En savoir plus</a><ion-button color="primary" mode="ios" (click)="sendmessage(-1,4)">Solutions</ion-button>
+  </div></ion-card-content>
+</ion-card>
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/medal.svg"><div >
+    <div class="card-title">Bravo ! Vous avez atteint votre objective </div>
+    <div class="card-text">Vous avez economisé 300 dinars!</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><ion-button color="primary" mode="ios"(click)="sendmessage(-1,5)" >Nouvel objectif</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/cancel.svg"><div >
+    <div class="card-title">Vous avez payé Ooredoo 3 fois!</div>
+    <div class="card-text">Y-a-t'il une erreur ?</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><a  class="card-link" (click)="sendmessage(-1,2)">En savoir plus</a><ion-button color="primary" mode="ios" (click)="sendmessage(-1,3)">Solutions</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/warning.svg"><div >
+    <div class="card-title">Votre assurance vous coûte trop cher!</div>
+    <div class="card-text">Vous pouvez économiser sur votre assurance auto</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><ion-button  color="primary" mode="ios">En savoir plus</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/best.svg"><div >
+    <div class="card-title">C'est le meilleur jour du mois!</div>
+    <div class="card-text">Votre salaire vient d'être déposé</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><ion-button  color="primary" mode="ios" >voir transaction</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/loan.svg"><div >
+    <div class="card-title">Vous êtes pré-qualifié pour un crédit</div>
+    <div class="card-text">Vous pouvez emprunter jusqu'à 45 000 dinars</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><ion-button  color="primary" mode="ios" >En savoir plus</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/saving.svg"><div >
+    <div class="card-title">Profiter des intérêt sur votre argent</div>
+    <div class="card-text">Placer votre excédent dans un compte d'épargne</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><a  class="card-link" >En savoir plus</a><ion-button  color="primary" mode="ios" >Transfert d'argent</ion-button>
+  </div></ion-card-content>
+</ion-card>
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/saving.svg"><div >
+    <div class="card-title">Il est temps de alimenter votre compte d'épargne</div>
+    <div class="card-text">Il reste 400 dinars pour garantir des vacances réussies</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><a  class="card-link" >En savoir plus</a><ion-button  color="primary" mode="ios" >Faire des économies</ion-button>
+  </div></ion-card-content>
+</ion-card>
+<ion-card  mode="ios">
+  <ion-card-content  style="background: aliceblue;">
+  <div  class="card-content"><img class="card-img" src="assets/img/travel.svg"><div >
+    <div class="card-title">Planifier pour votre prochain voyage</div>
+    <div class="card-text">Tout est une question de planification</div>
+  </div>
+  </div>
+  <div  class="card-buttons" justify-content-end><a  class="card-link" >En savoir plus</a><ion-button  color="primary" mode="ios" >Faire des économies</ion-button>
+  </div></ion-card-content>
+</ion-card>
+
+   <!-->
+
+   <ion-slides  pager=true style="height: 95%;">
+   <ion-slide>
+
+   <ion-grid>
+   
+
+  <ion-row >
+      <canvas #doughnutCanvas></canvas>
+      </ion-row>
+   
+            <ion-row style="margin-top:4%">
+          <div class="card-content">
+                   <img class="card-img" src="assets/img/budget.svg">
+                <div class="card-title">You spent 80% of your monthly shopping budget</div>
+                  <div class="card-text">Define and follow your budgets!</div>
+                </div>
+          
+          
+          </ion-row>
+          <ion-row style="margin-top:1%">
+          <div class="card-buttons">
+
+                <ion-button mode="ios" color="primary" routerLink="/support" >Edit budget</ion-button>
+
+              </div>
+              </ion-row>
+        </ion-grid>
+
+        </ion-slide>
+
+        <ion-slide>
+   <ion-grid>
+   
+
+  <ion-row >
+      <canvas #barCanvas></canvas>
+      </ion-row>
+   
+            <ion-row style="margin-top:4%">
+          <div class="card-content">
+                   <img class="card-img" src="assets/img/Shopping.svg">
+                <div class="card-title">You are spending 25% more on groceries than your peers</div>
+                  <div class="card-text">Set an objective and save money!</div>
+                </div>
+          
+          
+          </ion-row>
+          <ion-row style="margin-top:1%">
+          <div class="card-buttons">
+
+                <ion-button mode="ios" color="primary" routerLink="/support" >Set Objective</ion-button>
+
+              </div>
+              </ion-row>
+        </ion-grid>
+
+        </ion-slide>
+
+        <ion-slide>
+   <ion-grid>
+   
+
+  <ion-row >
+      <canvas #lineCanvas></canvas>
+      </ion-row>
+   
+            <ion-row style="margin-top:4%">
+          <div class="card-content">
+                   <img class="card-img" src="assets/img/warning.svg">
+                <div class="card-title">Upcoming payments, it’s likely you’ll go overdrawn next week!</div>
+                  <div class="card-text">Make a transfer</div>
+                </div>
+          
+          
+          </ion-row>
+          <ion-row style="margin-top:1%">
+          <div class="card-buttons">
+
+                <ion-button mode="ios" color="primary" routerLink="/support" >Transfer</ion-button>
+
+              </div>
+              </ion-row>
+        </ion-grid>
+
+        </ion-slide>
+        
+        
+        
+   </ion-slides>
+   <-->
+   
+   
+      
+      <!--ion-list>
+
+      
+        	<ion-card mode="ios" style="background-color: aliceblue;">
+          
+
+            <ion-card-content mode="ios" >
+            <div class="card-content">
+              	<img class="card-img" src="assets/img/piggy-bank.svg">
+                <div class="card-title">You spent 80% of your monthly shopping budget</div>
+                  <div class="card-text">Define and follow your budgets!</div>
+                </div>
+
+                 
+              <div class="card-buttons">
+
+                <ion-button mode="ios" color="primary" routerLink="/support" >Start Objective</ion-button>
+
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+          <ion-card mode="ios" style="background-color: aliceblue;">
+          
+
+            <ion-card-content mode="ios" >
+              <div class="card-content">
+              	                <img class="card-img" src="assets/img/museum.svg">
+
+                <div>
+                  <div class="card-title">My retirement plan</div>
+                  <div class="card-text">You've already saved 4000€ for your retirement plan. You can do better!</div>
+                </div>
+              </div>
+              <div class="card-buttons">
+
+                <ion-button mode="ios" color="primary" routerLink="/support" >Show Advices</ion-button>
+
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+          
+      </ion-list-->
+
+</ion-content>

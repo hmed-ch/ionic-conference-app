@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-toolbar *ngIf="invalidcred"  mode="ios" color="danger">
+  <ion-title >Identifiant ou Mot de passe invalide</ion-title>
+</ion-toolbar>
+  <ion-row style="text-align:center;">
+  <ion-col>
+
+</ion-col>
+<ion-col>
+  <div class="login-logo">
+    <ion-img alt="Connexion" style="margin:auto;display:block;width: 60%;" src="assets/img/{{banklogo}}"></ion-img>
+
+
+    <ion-text >
+        <h2 >
+          Connexion
+        </h2>
+      </ion-text>
+          <ion-text >
+          <h5 >
+            {{bankname}}</h5>
+          </ion-text>
+
+  </div>
+</ion-col>
+  <ion-col>
+  </ion-col>
+ </ion-row>
+   <!--iframe  #IFRAME sandbox="allow-same-origin allow-scripts allow-popups allow-forms" [src]="url"></iframe-->
+
+  <form #loginForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" >Identifiant </ion-label>
+        <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
+          Identifiant is required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked" >Code secret</ion-label>
+        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
+          Mot de passe is required
+        </p>
+      </ion-text>
+    </ion-list>
+
+    <ion-row>
+    <ion-col>
+        
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="onLogin(loginForm)" style="border-radius: 30px;" type="submit" expand="block"><ion-icon name="arrow-dropright"></ion-icon></ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-row style="margin-bottom: 4%;">
+        <ion-col>
+        <ion-text >
+        
+        <em style='display: table-cell;margin-right: .8rem;color: #738aaa;font-size: .8rem;'><ion-icon name="information-circle-outline"></ion-icon> Renseignez les mêmes informations que celles que vous utilisez sur le site de votre banque.</em>
+      </ion-text>
+      </ion-col>
+      </ion-row>
+
+<ion-row >
+    <ion-col>
+    </ion-col>
+    <ion-col>
+        <ion-img alt="Secure" style="margin-left:45%;width: 19%;" src="assets/img/secure.svg"></ion-img>
+
+    </ion-col>
+    <ion-col>
+    </ion-col>
+
+    </ion-row>
+    <ion-row>
+
+    
+      <ion-col    style="padding-top: 0px;">
+      <ion-text style="margin-left: 30%;">
+    <em style='display: table-cell;color: #738aaa;font-size: .8rem;'> ATTILA est securisé et sûr</em>
+    </ion-text>
+    </ion-col>
+    
+  </ion-row>
+      
+    
+
+</ion-content>
+
+

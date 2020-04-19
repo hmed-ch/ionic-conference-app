@@ -1,0 +1,146 @@
+app-simulatorview {
+  height: 100%;
+}
+.modal-open {
+  .modal {
+    overflow-y: hidden;
+  }
+}
+.modal-header {
+      // background-color: #f5f6f7;
+      padding: 0.3rem 1rem;
+      .modal-title {
+        margin: 0 auto;
+      }
+      .close {
+        margin-left: 0;
+        font-weight: normal;
+      }
+    }
+.modal-dialog {
+  position: absolute;
+  bottom: 0;
+  top: 25px;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  transform: none;
+  transition: none;
+  .modal-content {
+    border-radius: 0.5rem;
+    border: none;
+    height: 100%;
+    .modal-header {
+      // background-color: #f5f6f7;
+      padding: 0.3rem 1rem;
+      .modal-title {
+        margin: 0 auto;
+      }
+      .close {
+        margin-left: 0;
+        font-weight: normal;
+      }
+    }
+
+    .modal-body {
+      // height: 400px;
+      height: calc(100% - 35px);
+      .iframestyle {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: 0;
+      }
+    }
+  }
+}
+
+.modal-body {
+      // height: 400px;
+      height: calc(100% - 35px);
+      .iframestyle {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: 0;
+      }
+    }
+
+.modal {
+  &.fade {
+    opacity: 1;
+  }
+  &.hide {
+    display: block;
+    .modal-dialog {
+      animation: slideOutDown 0.1s linear;
+    }
+  }
+}
+.modal {
+  &.show {
+    .modal-dialog {
+      animation: slideInUp 0.3s linear;
+    }
+  }
+}
+.modal.fade .modal-dialog {
+   -webkit-transform: translate(0);
+   -moz-transform: translate(0);
+   transform: translate(0);
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+    visibility: hidden;
+  }
+}
+
+ion-text {
+  h5 {
+    border-bottom: var(--ion-color-primary) 1px solid;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.result {
+  font-weight: bold;
+}
+ion-item {
+  &.input-container {
+    margin-top: 0.5rem;
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    border-radius: 4px;
+    --min-height: 40px;
+    --highlight-color-valid: var(--ion-color-primary);
+
+    ion-input {
+      height: 40px;
+    }
+  }
+}
+ion-item {
+  &.header {
+    ion-thumbnail {
+      height: 42px;
+      width: 42px;
+    }
+    ion-label {
+      font-size: 22px;
+    }
+  }
+}
